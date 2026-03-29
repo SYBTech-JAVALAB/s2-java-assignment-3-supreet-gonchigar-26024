@@ -1,0 +1,57 @@
+import java.util.Scanner;
+class EmployeePayroll {
+
+    void calculateSalary(int employeeID) {
+        int salary = 20000;
+        System.out.println("Employee ID : " + employeeID);
+        System.out.println("Salary: " + salary);
+        System.out.println();
+    }
+
+    void calculateSalary(int employeeID, int bonus) {
+        int salary = 20000 + bonus;
+        System.out.println("Employee ID : " + employeeID);
+        System.out.println("Salary with Bonus: " + salary);
+        System.out.println();
+    }
+
+    void calculateSalary(double annualSalary) {
+        System.out.println("Annual Salary: " + annualSalary);
+        System.out.println();
+    }
+
+    void calculateSalary(int hoursWorked, int rate, int overtime) {
+        int salary = (hoursWorked * rate) + overtime;
+        System.out.println("Salary with Overtime: " + salary);
+        System.out.println(); }
+
+    public static void main(String[] args) {
+
+        Scanner sc = new Scanner(System.in);
+        EmployeePayroll emp = new EmployeePayroll();
+
+        System.out.print("Enter Employee ID: ");
+        int id = sc.nextInt();
+        emp.calculateSalary(id);
+
+        System.out.print("Enter Hours Worked: ");
+        int hours = sc.nextInt();
+        System.out.print("Enter Rate per Hour: ");
+        int rate = sc.nextInt();
+        emp.calculateSalary(hours, rate);
+
+        System.out.print("Enter Bonus: ");
+        int bonus = sc.nextInt();
+        emp.calculateSalary(id, bonus);
+
+        System.out.print("Enter Annual Salary: ");
+        double annual = sc.nextDouble();
+        emp.calculateSalary(annual);
+
+        System.out.print("Enter Overtime Amount: ");
+        int overtime = sc.nextInt();
+        emp.calculateSalary(hours, rate, overtime);
+
+        sc.close();
+    }
+}
